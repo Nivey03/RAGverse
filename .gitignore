@@ -1,0 +1,32 @@
+#  Virtual Environment
+.venv/
+
+# Python cache folders
+__pycache__/
+*.pyc
+
+#  Environment & Config
+.env
+*.env
+
+#  Data & Database
+# Ignore FAISS index and metadata files
+data/database/vector_db.index
+data/database/vector_db.metadata
+
+# Ignore all files inside data/documents/
+data/documents/*
+
+# But Keep this folder in the repo, even though it’s empty (placeholder)
+!data/documents/.gitkeep
+
+
+# file exclusions
+info (for me)
+ran.py
+ran2.py
+
+#  IDE & System Files
+.idea/
+desktop.ini
+
