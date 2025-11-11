@@ -13,7 +13,7 @@ import config
 def main():
 
     # LOAD DOCUMENTS
-    print("Loading documents...\n")
+    print("Loading documents...")
 
     loader = DocumentLoader(config.DATA_DIR)
     documents = loader.load_documents()
@@ -25,21 +25,20 @@ def main():
 
     # CHUNK DOCUMENTS
     print("-" * 60)
-    print("\nChunking documents...\n")
+    print("Chunking documents...")
 
     chunker = Chunker()
     chunks = chunker.chunk_documents(documents)
 
-
     # INDEX DOCUMENTS
     print("-" * 60)
-    print("\nCreating embeddings and indexing...\n")
+    print("Creating embeddings and indexing...")
 
     retriever = Retriever()
 
     # Try to load existing index
     if retriever.load():
-        print("Loaded existing vector store")
+        print("\nLoaded existing vector store")
         user_input = input("\nRe-index documents? (y/n): ")
         if user_input.lower() == 'y':
             retriever.vector_store.clear()
@@ -52,7 +51,7 @@ def main():
 
 
     # QUERY LOOP
-    print("\nQuery your documents!\n")
+    print("\nQuery your documents!")
     print("=" * 60)
     print("Type your questions ('q', 'exit' or 'quit' to exit)")
     print("-" * 60)
@@ -77,7 +76,7 @@ def main():
             print(f"\n[Result {i}]")
             print(f"Source: {result['source']} | Chunk: {result['chunk_id']}")
             print(f"Relevance Score: {1 / (1 + result['distance']):.4f}")  # Convert distance to similarity
-            print(f"\nContent:\n{result['content']}")
+            # print(f"\nContent:\n{result['content']}")
             print("-" * 60)
 
 

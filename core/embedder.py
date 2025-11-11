@@ -54,7 +54,7 @@ class Embedder:
             convert_to_numpy=True
         )
 
-        print(f"✓ Created embeddings with shape: {embeddings.shape}")
+        print(f"  Created embeddings with shape: {embeddings.shape}")
         return embeddings
 
     def embed_query(self, query: str) -> np.ndarray:

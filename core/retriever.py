@@ -54,7 +54,7 @@ class Retriever:
         Returns:
             List of relevant chunks with metadata and scores
         """
-        print(f"\Searching for: '{query}'")
+        print(f"Searching for: '{query}'")
         print("-" * 50)
 
         # Create query embedding
@@ -64,11 +64,11 @@ class Retriever:
         results = self.vector_store.search(query_embedding, top_k)
 
         # Display results
-        print(f"\nFound {len(results)} relevant chunks:\n")
+        print(f"Found {len(results)} relevant chunks:\n")
         for result in results:
             print(f"  Rank {result['rank']} | Distance: {result['distance']:.4f}")
             print(f"  Source: {result['source']} (Chunk {result['chunk_id']})")
-            print(f"  Preview: {result['content'][:100]}...")
+            print(f"  Preview: {result['content'][:150]}...")
             print()
 
         return results

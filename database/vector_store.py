@@ -56,7 +56,7 @@ class VectorStore:
 
         self.metadata.extend(metadata)
 
-        print(f"✓ Added {len(embeddings)} embeddings to vector store")
+        print(f"  Added {len(embeddings)} embeddings to vector store")
         print(f"  Total vectors in store: {self.index.ntotal}")
 
     def search(self, query_embedding: np.ndarray, top_k: int = config.TOP_K) -> List[Dict]:
@@ -134,4 +134,4 @@ class VectorStore:
         """
         self.index = faiss.IndexFlatL2(self.dimension)
         self.metadata = []
-        print("Vector store cleared")
+        print("* Vector store cleared *")
