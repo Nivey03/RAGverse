@@ -20,12 +20,12 @@ data/documents/*
 # But Keep this folder in the repo, even though it’s empty (placeholder)
 !data/documents/.gitkeep
 
+./me
 
 # file exclusions
-info (for me)
-ran.py
-ran2.py
-random.ipynb
+me/ran.py
+me/ran2.py
+me/random.ipynb
 
 #  IDE & System Files
 .idea/
